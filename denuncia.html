@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidade Sustentável</title>
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f0f8ff;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        header {
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background-color: #009688;
+            color: #fff;
+            font-size: 1.8em;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin-top: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .input-section {
+            margin-bottom: 20px;
+        }
+        .input-section label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .input-section input, .input-section textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn {
+            background-color: #009688;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background-color: #00796b;
+        }
+        .report, .comment {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+        }
+        .report h3, .comment h3 {
+            color: #009688;
+        }
+    </style>
+</head>
+<body>
+
+    <header>Comunidade Sustentável - Denúncias e Dicas Ambientais</header>
+
+    <div class="container">
+        <section class="input-section">
+            <h2>Faça uma Denúncia</h2>
+            <label for="report-title">Título da Denúncia</label>
+            <input type="text" id="report-title" placeholder="Digite um título">
+            
+            <label for="report-content">Descrição da Denúncia</label>
+            <textarea id="report-content" rows="4" placeholder="Descreva o problema encontrado"></textarea>
+            
+            <button class="btn" onclick="submitReport()">Enviar Denúncia</button>
+        </section>
+        
+        <section id="report-list">
+            <h2>Denúncias Recentes</h2>
+            <!-- Lista de denúncias aparecerá aqui -->
+        </section>
+        
+        <section class="input-section">
+            <h2>Dicas e Comentários</h2>
+            <label for="comment-content">Compartilhe uma dica ou comentário</label>
+            <textarea id="comment-content" rows="4" placeholder="Compartilhe sua dica ou experiência"></textarea>
+            
+            <button class="btn" onclick="submitComment()">Comentar</button>
+        </section>
+        
+        <section id="comment-list">
+            <h2>Comentários da Comunidade</h2>
+            <!-- Lista de comentários aparecerá aqui -->
+        </section>
+    </div>
+
+    <script>
+        // Função para enviar uma denúncia
+        function submitReport() {
+            const title = document.getElementById("report-title").value;
+            const content = document.getElementById("report-content").value;
+            if (title && content) {
+                const reportList = document.getElementById("report-list");
+                const reportItem = document.createElement("div");
+                reportItem.classList.add("report");
+                reportItem.innerHTML = `<h3>${title}</h3><p>${content}</p>`;
+                reportList.appendChild(reportItem);
+                document.getElementById("report-title").value = "";
+                document.getElementById("report-content").value = "";
+            } else {
+                alert("Por favor, preencha o título e a descrição da denúncia.");
+            }
+        }
+
+        // Função para enviar um comentário ou dica
+        function submitComment() {
+            const content = document.getElementById("comment-content").value;
+            if (content) {
+                const commentList = document.getElementById("comment-list");
+                const commentItem = document.createElement("div");
+                commentItem.classList.add("comment");
+                commentItem.innerHTML = `<p>${content}</p>`;
+                commentList.appendChild(commentItem);
+                document.getElementById("comment-content").value = "";
+            } else {
+                alert("Por favor, escreva um comentário ou dica antes de enviar.");
+            }
+        }
+    </script>
+</body>
+</html>

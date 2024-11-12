@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login de Comunidade</title>
+    <style>
+        /* Reset de margens e bordas */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilo geral da página */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1e1e2f;
+            font-family: Arial, sans-serif;
+            color: #f4f4f9;
+        }
+
+        /* Container do formulário de login */
+        .login-container {
+            background-color: #333;
+            width: 100%;
+            max-width: 400px;
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .login-container h2 {
+            margin-bottom: 1em;
+            font-weight: normal;
+        }
+
+        /* Estilos dos campos de entrada */
+        .input-field {
+            position: relative;
+            margin-bottom: 1.5em;
+        }
+
+        .input-field input {
+            width: 100%;
+            padding: 12px 40px 12px 12px;
+            border-radius: 5px;
+            border: none;
+            background-color: #444;
+            color: #f4f4f9;
+            font-size: 1em;
+        }
+
+        /* Ícones dentro dos campos de entrada */
+        .input-field i {
+            position: absolute;
+            top: 50%;
+            right: 12px;
+            transform: translateY(-50%);
+            color: #888;
+        }
+
+        /* Botão de login */
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            border-radius: 5px;
+            border: none;
+            background-color: #1e90ff;
+            color: white;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-btn:hover {
+            background-color: #3fa9ff;
+        }
+
+        /* Link para voltar */
+        .back-link {
+            display: block;
+            margin-top: 1em;
+            color: #888;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: #f4f4f9;
+        }
+    </style>
+    <!-- Biblioteca de ícones (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Login de Comunidade</h2>
+        
+        <!-- Campo de Usuário -->
+        <div class="input-field">
+            <input type="text" placeholder="Usuário" required>
+            <i class="fas fa-user"></i>
+        </div>
+        
+        <!-- Campo de Senha -->
+        <div class="input-field">
+            <input type="password" placeholder="Senha" required>
+            <i class="fas fa-lock"></i>
+        </div>
+        
+        <!-- Botão de Login -->
+        <button class="login-btn">Entrar</button>
+
+        <!-- Link para voltar -->
+        <a href="index.html" class="back-link">← Voltar para a página principal</a>
+    </div>
+
+</body>
+</html>
